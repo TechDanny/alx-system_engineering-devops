@@ -1,2 +1,2 @@
 #!/bin/bash
-file_path = " /tmp/iamafile"
+import os; print(f"the file type of iamafile is: {os.path.splitext(' /tmp/iamafile')[1]}")
