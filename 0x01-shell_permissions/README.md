@@ -1,1 +1,1 @@
-the root user changed to betty
+whoami script
