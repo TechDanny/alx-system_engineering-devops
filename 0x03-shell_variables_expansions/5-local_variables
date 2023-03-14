@@ -1,2 +1,2 @@
 #!/bin/bash
-diff set.sorted printenv.sorted | grep "<" | awk '{ print $2 }'
+:!compgen -v;compgen -e;compgen -A function
