@@ -1,2 +1,2 @@
 #!/bin/bash
-printenv; set -f; set | awk '/^\w/ && !/=$/ {print}'
+set
