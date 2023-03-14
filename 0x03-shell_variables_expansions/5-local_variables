@@ -1,2 +1,2 @@
 #!/bin/bash
-:!compgen -v;compgen -e;compgen -A function
+printenv; set -f; set | awk '/^\w/ && !/=$/ {print}'
