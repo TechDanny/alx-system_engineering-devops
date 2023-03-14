@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $ PATH .vim/ -maxdepth 1 -type d | wc -l
+echo $ PATH .vim/* -maxdepth 0 -type d | wc -l
