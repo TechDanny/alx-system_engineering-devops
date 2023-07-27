@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Display all the files in the current directory
+
+for files in *
+do
+	echo "$files" | cut -d '-' -f 2
+done
