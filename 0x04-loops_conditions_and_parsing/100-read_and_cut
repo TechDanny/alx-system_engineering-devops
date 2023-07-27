@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Dispays the content of the file
+
+fileName="/etc/passwd"
+
+while IFS= read -r line
+do
+	echo "$line" | cut -d ':' if1,3,6
+done < "fileName"
