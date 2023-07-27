@@ -6,7 +6,7 @@ fileName="/etc/passwd"
 while IFS= read -r line
 do
 	user=$(echo "$line" | cut -d ':' -f1)
-	git=$(echo "$line" | cut -d ':' -f4)
+	gid=$(echo "$line" | cut -d ':' -f4)
 	dir=$(echo "$line" | cut -d ':' -f6)
 	shell=$(echo "$line" | cut -d ':' -f7)
 	uid=$(echo "$line" | cut -d ':' -f3)
