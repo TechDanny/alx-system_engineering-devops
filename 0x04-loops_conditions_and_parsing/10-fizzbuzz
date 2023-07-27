@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Displays number from 1 to 100
+
+number=1
+
+while [ $number -lt 101 ]
+do
+	if ! (($number % 3)) && ! (($number % 5))
+	then
+		echo $"FizzBuzz"
+	elif ! (($number % 3))
+	then
+		echo $"Fizz"
+	elif ! (($number % 5))
+	then
+		echo $"Buzz"
+	else
+		echo $number
+	fi
+	((number++))
+done
