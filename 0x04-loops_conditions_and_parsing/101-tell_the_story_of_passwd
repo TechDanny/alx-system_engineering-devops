@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Displays the content of a file
+
+fileName="/etc/passwd"
+
+while IFS= read -r line
+do
+	user=$(echo "$line" | cut -d ':' -f1)
+	git=$(echo "$line" | cut -d ':' -f4)
+	dir=$(echo "$line" | cut -d ':' -f6)
+	shell=$(echo "$line" | cut -d ':' -f7)
+	uid=$(echo "$line" | cut -d ':' -f3)
+	pass=$(echo "$line" | cut -d ':' -f2)
+	info=$(echo "$line" | cut -d ':' -f5)
+
+	echo "The user $user is the part of the $gid gang, lives in $dir and rides $shell. $uid's place is protected by the passcode $pass, more info about the user here: $info"
+done < "$fileName"
