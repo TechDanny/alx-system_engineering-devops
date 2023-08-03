@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Displays all active IPv4 IPS on the machine it is eexecuted on
+
+ifconfig | awk '$1 == "inet" {print $2}'
