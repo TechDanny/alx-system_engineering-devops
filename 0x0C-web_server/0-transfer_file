@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # Transfers file from client to server
 
 if [ $# -lt 4 ]
