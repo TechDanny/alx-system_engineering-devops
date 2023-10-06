@@ -9,7 +9,7 @@ if [ "$#" -eq 2 ]
 then
 	display_info "$1" "$2"
 else
-	subdomain=("www" "Ib-01" "web-01" "web-02")
+	subdomain=("www" "lb-01" "web-01" "web-02")
 	for x in "${subdomain[@]}"
 	do
 		display_info "$1" "$x"
