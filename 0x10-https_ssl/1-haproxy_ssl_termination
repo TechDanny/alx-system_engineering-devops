@@ -33,14 +33,10 @@ defaults
         errorfile 502 /etc/haproxy/errors/502.http
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
-
-frontend http_front
-        bind *:80
-        bind *:443 ssl crt /etc/haproxy/certs/www.hlbbddd32.tech.pem
+listen myserver
+        bind :80
+        bind :443 ssl crt /etc/haproxy/certs/www.hlbbddd32.tech.pem
         redirect scheme https code 301 if !{ ssl_fc }
-        default_backend http_back
-backend http_back
         balance roundrobin
-        mode http
-        server 327025-web-01 3.83.18.101 check
-        server 327025-web-02 100.24.244.117 check
+        server 327025-web-01 3.83.18.101:80 check
+        server 327025-web-02 100.24.244.117:80 check
