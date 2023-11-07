@@ -7,7 +7,7 @@ Queries Reddit API and returns the list containing all the titles
 import requests
 
 
-def recurse(subreddit, hot_list=[]):
+def recurse(subreddit, hot_list=[], after="", count=0):
     """if not valid return None"""
     url = f"https://www.reddit.com/r/{subreddit}/hot.json"
     headers = {"User-Agent": "linux:0x16.api.advanced:v1.0.0 (by /u/bdov_)"}
@@ -24,9 +24,9 @@ def recurse(subreddit, hot_list=[]):
     after = rslt.get('after')
     count += rslt.get('dist')
     for i in rslt.get("children"):
-        my_list.append(i.get('data').get('title'))
+        hot_list.append(i.get('data').get('title'))
 
     if after is not None:
-        return recurse(subreddit, my_list, after, count)
+        return recurse(subreddit, hot_list, after, count)
     else:
-        return my_list
+        return hot_list
