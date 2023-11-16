@@ -24,7 +24,7 @@ rewrite ^/redirect_me https://www.facebook.com/ permanent;
         listen [::]:80 default_server;
 
         location /airbnb-onepage/ {
-                proxy_pass http://localhost:5000;
+                proxy_pass http://localhost:500;
         }
 
         location /hbnb_static/ {
@@ -54,10 +54,9 @@ rewrite ^/redirect_me https://www.facebook.com/ permanent;
 
         server_name _;
         error_page 404 /404.html;
-
         location = /404.html {
-
                 internal;
+
         }
 
         location / {
@@ -72,7 +71,7 @@ rewrite ^/redirect_me https://www.facebook.com/ permanent;
         #       include snippets/fastcgi-php.conf;
         #
         #       # With php-fpm (or other unix sockets):
-        #       fastcgi_pass unix:/run/php/php7.4-fpm.sock;
+        #       fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
         #       # With php-cgi (or other tcp sockets):
         #       fastcgi_pass 127.0.0.1:9000;
         #}
@@ -104,3 +103,4 @@ rewrite ^/redirect_me https://www.facebook.com/ permanent;
 #               try_files $uri $uri/ =404;
 #       }
 #}
+~                                                    
